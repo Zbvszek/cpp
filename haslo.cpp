@@ -1,28 +1,22 @@
-#include <cstdio>
-
+#include <iostream>
+#include <string>
 
 int main() {
-	//Marcin Cieśla
-	//Logowanie
-	//Logowanie,podaj haslo moze zgadniesz albo przeczytasz
-    char password='superhaslomega2011plMarekKiedyKorki';
-    char guess;
-    
-    while(1){
-        
-    scanf("%c",&guess);
-    
-    if(guess != password){
-        printf("podaleś złe hasło");
-        
-    }
-    else{
-        
-        printf("zapraszam do środka");
-        break;
-        
-    }
-    
+  std::string password = "superhaslomega2011plMarekKiedyKorki";
+  std::string guess;
+
+  while(1){
+      std::cout << "Podaj hasło: ";
+      std::cin >> guess;
+
+      if(password != guess){
+          std::cout << "Podałeś złe hasło\n";
+      }
+      else{
+          std::cout << "Zapraszam do środka\n";
+          break;
+      }
+  }
+
+  return 0;
 }
-}
-    
