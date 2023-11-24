@@ -1,3 +1,4 @@
+#include <cstdio>
 int main() {
 	//Marcin Cieśla
 	//Fahrenfajt na Stopnie
