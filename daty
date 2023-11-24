@@ -1,17 +1,15 @@
-﻿#include <iostream>
+#include <iostream>
+#include <string>
 
-struct wiek {
+struct Wiek {
 	int dzien;
 	int miesiac;
 	int rok;
 };
 
-
 int main() {
-	// Autor marcin Cieśla 
-	//użytwonik podaje aktulana date miesiac rok i date urodzenia poczym program wylicza ile ma lat
-
-	int dzien, rok, miesiac,dzienU,miesiacU,rokU;
+	int dzien, rok, miesiac, dzienU, miesiacU, rokU;
+	std::string slowo1, slowo2, slowo3, flaga = "stop";
 
 	std::cout << "podaj dzien miesiac i rok";
 	std::cin >> dzien >> miesiac >> rok;
@@ -19,18 +17,17 @@ int main() {
 	std::cout << "podaj swoja date urodzenia dzien miesiac rok";
 	std::cin >> dzienU >> miesiacU >> rokU;
 
-	wiek wiek = { dzien - dzienU,miesiac - miesiacU,rok - rokU };
+	Wiek wiek = { dzien - dzienU, miesiac - miesiacU, rok - rokU };
 	if (dzien - dzienU < 0) {
-		wiek.miesiac - 1;
-		wiek.dzien = 31;
+		wiek.miesiac -= 1;
+		wiek.dzien += 31;
 	}
-	if (miesiac - miesiacU<0) {
-		wiek.rok - 1;
-		wiek.miesiac = 12;
+	if (miesiac - miesiacU < 0) {
+		wiek.rok -= 1;
+		wiek.miesiac += 12;
 	}
 
-	std::cout << "Urodziłeś się dokładnie " << wiek.dzien << " dni temu " << wiek.miesiac << " miesiecy temu " << wiek.rok << " lat temu ";
-	
+	std::cout << "Urodziles sie dokladnie " << wiek.dzien << " dni temu " << wiek.miesiac << " miesiecy temu " << wiek.rok << " lat temu ";
 
-	
+	return 0;
 }
