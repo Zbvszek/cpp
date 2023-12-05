@@ -40,7 +40,7 @@ int main(){
                 cout<<czas;
 
                 break;
-
+return 0;
         }
     }
 
