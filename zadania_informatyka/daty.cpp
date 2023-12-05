@@ -32,5 +32,5 @@ int main() {
     std::cout << "Urodziłeś się dokładnie " << wiek.dzien << " dni temu " << wiek.miesiac << " miesiecy temu " << wiek.rok << " lat temu ";
 
 
-
+return 0;
 }
