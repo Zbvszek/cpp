@@ -1,0 +1,103 @@
+#include <iostream>
+#include <string>
+
+int numSkoczkow;
+int skocznia = 0;
+int punkt_K;//odleglosc
+
+class Zawodnik {
+public:
+    std::string imie;
+    std::string nazwisko;
+
+    //liczenie punktow
+    int dlugosc_skok;
+    int styl_skoku;
+    int punktK;
+    double punktW;
+    double Czas;
+    int punktD;
+    int punktB;
+    int PunktKary;
+
+    int punkty_s;
+    int punkty_kon;
+    //metoda liczaca  punkty
+    void punkty(int skocznia, int punkt_K) {
+
+    };
+
+
+};
+    static void odleglosc_skoczni(int skocznia) {
+        //dolne granice, do poprawy zrobic przedzialy
+        if (skocznia = 1) {
+            skocznia = 50;
+            punkt_K = 70;
+        }
+        else if (skocznia = 2) {
+            skocznia = 85;
+            punkt_K = 80;
+        }
+        skocznia = 110;
+        punkt_K = 100;
+    }
+
+    static void sprawdz_kw(int punkty_kon, int punkty_s) {
+        if (punkty_kon > 200 || punkty_s > 100) std::cout << "kwalifikujesz sie do tego rocznego pucharu swiata";
+    };
+
+
+
+
+    int main() {
+        //wybor skoczni
+        while (skocznia <= 0) {
+            std::cout << "Wybierz wielkosc skoczni\n1.Skocznia srednia\n2.Skocznia normalna\n3.Skocznia duza\nPodaj numer swojego wyboru: ";
+            std::cin >> skocznia;
+        }
+
+        odleglosc_skoczni(skocznia);
+        //ilosc skoczkow
+        while (numSkoczkow < 3) {
+            std::cout << "Ilu skoczkow bierze udzial: ";
+            std::cin >> numSkoczkow;
+        }
+
+        Zawodnik* skoczkowie = new Zawodnik[numSkoczkow];
+        //dane na temat skoczkow i 
+        for (int i = 0; i < numSkoczkow; i++) {
+            std::cout << "Podaj imie skoczka nr " << i + 1 << ": ";
+            std::cin >> skoczkowie[i].imie;
+
+            std::cout << "Podaj nazwisko tego skoczka: ";
+            std::cin >> skoczkowie[i].nazwisko;
+
+            std::cout << "Podaj odleglosc skoku: ";
+            std::cin >> skoczkowie[i].dlugosc_skok;
+
+            std::cout << "Podaj ilosc punktow za styl: ";
+            std::cin >> skoczkowie[i].styl_skoku;
+
+            std::cout << "Podaj predkosc wiatru(milisekundy): ";
+            std::cin >> skoczkowie[i].punktW;
+
+            std::cout << "Podaj czas lotu(sekundy): ";
+            std::cin >> skoczkowie[i].Czas;
+
+            std::cout << "Podaj ilosc punktow dodatkowych";
+            std::cin >> skoczkowie[i].punktD;
+            std::cout << "Punkty karne: ";
+            std::cin >> skoczkowie[i].punktK;
+        }
+        for (int i = 0; i < numSkoczkow; i++) {
+            std::cout << skoczkowie[i].imie << "" << skoczkowie[i].nazwisko << "\n" << "zdobyl " << skoczkowie[i].punkty_kon << "punktow w kontynentalnym\n" << "zdobyl " << skoczkowie[i].punkty_kon << "punktow w swiatowym";
+            sprawdz_kw(skoczkowie[i].punkty_kon, skoczkowie[i].punkty_s);
+            return 0;
+        }
+    }
+
+
+
+
+    
